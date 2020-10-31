@@ -23,7 +23,7 @@ services:
     ports:
       - ${NGINX_PORT}:80
     volumes:
-      - ${APP_CODE_PATH_HOST}/public/:/var/www/html/public/
+      - ${APP_CODE_PATH_HOST}:/var/www/html/
       - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
 
