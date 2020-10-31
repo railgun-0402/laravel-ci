@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   unzip \
   && docker-php-ext-install \
     pdo_pgsql \
+    sockets \
     zip \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
