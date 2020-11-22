@@ -3,7 +3,6 @@ FROM php:7.3-fpm
 RUN apt-get update && apt-get install -y --no-install-recommends \
   libpq-dev \
   libzip-dev \
-  npm \
   postgresql \
   unzip \
   && docker-php-ext-install \
@@ -13,5 +12,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+COPY --from=node:14.2 /usr/local/bin /usr/local/bin
+COPY --from=node:14.2 /usr/local/lib /usr/local/lib
 
 WORKDIR /var/www/html
