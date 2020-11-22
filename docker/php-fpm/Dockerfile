@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   libpq-dev \
   libzip-dev \
   postgresql \
+  python3 \
   unzip \
   && docker-php-ext-install \
     pdo_pgsql \
